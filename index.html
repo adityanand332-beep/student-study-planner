@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Study Planner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">STUDENT PRODUCTIVITY</p>
+      <h1>📚 Study Planner</h1>
+      <p class="subtitle">Plan your study tasks, track progress and stay consistent.</p>
+    </div>
+    <div class="date-card">
+      <span id="today"></span>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="stats">
+      <div class="stat-card">
+        <span>Total Tasks</span>
+        <strong id="totalTasks">0</strong>
+      </div>
+      <div class="stat-card">
+        <span>Completed</span>
+        <strong id="completedTasks">0</strong>
+      </div>
+      <div class="stat-card">
+        <span>Pending</span>
+        <strong id="pendingTasks">0</strong>
+      </div>
+      <div class="stat-card">
+        <span>Progress</span>
+        <strong id="progressText">0%</strong>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-title">
+        <div>
+          <h2>Add Study Task</h2>
+          <p>Create a task with subject, date and priority.</p>
+        </div>
+      </div>
+
+      <form id="taskForm" class="task-form">
+        <input id="taskName" type="text" placeholder="e.g. Study Data Structures" required>
+        <select id="subject" required>
+          <option value="">Select Subject</option>
+          <option>Data Structure</option>
+          <option>OOP C++</option>
+          <option>Computer Networking</option>
+          <option>Discrete Mathematics</option>
+          <option>Linux</option>
+          <option>Digital Computer Organisation</option>
+          <option>Other</option>
+        </select>
+        <input id="taskDate" type="date" required>
+        <select id="priority">
+          <option value="High">High Priority</option>
+          <option value="Medium" selected>Medium Priority</option>
+          <option value="Low">Low Priority</option>
+        </select>
+        <button type="submit">+ Add Task</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <div class="toolbar">
+        <div>
+          <h2>My Tasks</h2>
+          <p id="taskCount">0 tasks</p>
+        </div>
+        <div class="filters">
+          <select id="filter">
+            <option value="all">All Tasks</option>
+            <option value="pending">Pending</option>
+            <option value="completed">Completed</option>
+          </select>
+          <input id="search" type="search" placeholder="Search tasks...">
+          <button id="clearAll" class="danger-outline" type="button">Clear All</button>
+        </div>
+      </div>
+
+      <div class="progress-wrap">
+        <div class="progress-label">
+          <span>Overall Progress</span>
+          <span id="progressPercent">0%</span>
+        </div>
+        <div class="progress-bar"><div id="progressBar"></div></div>
+      </div>
+
+      <div id="taskList" class="task-list"></div>
+      <div id="emptyState" class="empty">
+        <div>📝</div>
+        <h3>No tasks found</h3>
+        <p>Add your first study task above.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>Built with HTML, CSS & JavaScript • Data is saved in your browser</footer>
+  <script src="script.js"></script>
+</body>
+</html>
